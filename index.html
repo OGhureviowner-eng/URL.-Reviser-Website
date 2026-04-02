@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkGuard Scanner - Check Website Safety</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>LinkGuard Scanner</h1>
+            </div>
+            <p>Scan any URL for security risks and malware</p>
+        </header>
+
+        <main>
+            <div class="scanner-card">
+                <div class="input-group">
+                    <input type="url" id="urlInput" placeholder="https://example.com" required>
+                    <button id="scanBtn">
+                        <span class="btn-text">Scan URL</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Scanning...
+                        </span>
+                    </button>
+                </div>
+                
+                <div id="results" class="results" style="display: none;">
+                    <div class="status" id="status">
+                        <div class="status-icon" id="statusIcon"></div>
+                        <h2 id="statusTitle"></h2>
+                        <p id="statusMessage"></p>
+                    </div>
+                    
+                    <div class="details">
+                        <div class="detail-item">
+                            <span>SSL Certificate</span>
+                            <span id="sslStatus" class="status-badge safe">Valid</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Reputation Score</span>
+                            <span id="reputation" class="status-badge warning">72/100</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Phishing Risk</span>
+                            <span id="phishing" class="status-badge safe">Low</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Last Scan</span>
+                            <span id="lastScan">Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by LinkGuard Security Scanner</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
