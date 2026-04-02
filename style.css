@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,39 +10,13 @@ body {
     padding: 20px;
 }
 
-.container {
-    max-width: 500px;
-    width: 100%;
-}
+.container { max-width: 500px; width: 100%; }
 
-header {
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-.logo i {
-    font-size: 2.5rem;
-    color: #00d4aa;
-}
-
-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-header p {
-    opacity: 0.9;
-    font-size: 1.1rem;
-}
+header { text-align: center; color: white; margin-bottom: 40px; }
+.logo { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px; }
+.logo i { font-size: 2.5rem; color: #00d4aa; }
+header h1 { font-size: 2rem; font-weight: 700; }
+header p { opacity: 0.9; font-size: 1.1rem; }
 
 .scanner-card {
     background: rgba(255, 255, 255, 0.95);
@@ -56,12 +26,7 @@ header p {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.input-group {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
+.input-group { display: flex; gap: 15px; margin-bottom: 30px; }
 #urlInput {
     flex: 1;
     padding: 18px 20px;
@@ -70,7 +35,6 @@ header p {
     font-size: 16px;
     transition: all 0.3s ease;
 }
-
 #urlInput:focus {
     outline: none;
     border-color: #667eea;
@@ -89,107 +53,48 @@ header p {
     transition: all 0.3s ease;
     white-space: nowrap;
 }
+#scanBtn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0, 212, 170, 0.4); }
+#scanBtn:active { transform: translateY(0); }
+#scanBtn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-#scanBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 212, 170, 0.4);
-}
-
-#scanBtn:active {
-    transform: translateY(0);
-}
-
-.results {
-    animation: slideUp 0.5s ease;
-}
-
+.results { animation: slideUp 0.5s ease; }
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.status {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
+.status { text-align: center; margin-bottom: 30px; }
 .status-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 80px; height: 80px; border-radius: 50%;
+    margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;
     font-size: 2rem;
 }
+.status.safe .status-icon { background: #00d4aa; color: white; }
+.status.warning .status-icon { background: #f39c12; color: white; }
+.status.danger .status-icon { background: #e74c3c; color: white; }
 
-.status.safe .status-icon {
-    background: #00d4aa;
-    color: white;
-}
+#statusTitle { font-size: 1.5rem; margin-bottom: 10px; font-weight: 600; }
 
-.status.warning .status-icon {
-    background: #f39c12;
-    color: white;
-}
-
-.status.danger .status-icon {
-    background: #e74c3c;
-    color: white;
-}
-
-#statusTitle {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.details {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
+.details { display: flex; flex-direction: column; gap: 15px; }
 .detail-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
+    display: flex; justify-content: space-between;
+    padding: 15px; background: #f8f9fa; border-radius: 10px;
     border-left: 4px solid #00d4aa;
 }
 
 .status-badge {
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
 }
-
 .status-badge.safe { background: #d4f4e8; color: #00b894; }
 .status-badge.warning { background: #fef5d6; color: #f39c12; }
 .status-badge.danger { background: #fadbd8; color: #e74c3c; }
 
 footer {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 30px;
-    font-size: 0.9rem;
+    text-align: center; color: rgba(255, 255, 255, 0.8);
+    margin-top: 30px; font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
-    .input-group {
-        flex-direction: column;
-    }
-    
-    .scanner-card {
-        padding: 30px 20px;
-    }
+    .input-group { flex-direction: column; }
+    .scanner-card { padding: 30px 20px; }
 }
